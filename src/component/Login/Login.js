@@ -58,8 +58,9 @@ class Login extends React.Component {
         isShowMask: !this.state.isShowMask,
         error:nextProps.error["response"].data["message"]
       })
-    }else if(nextProps.error && nextProps.error["response"].data.errors["Password"]
-){
+    }else if(nextProps.error && nextProps.error["response"].data && 
+    nextProps.error["response"].data.errors &&
+    nextProps.error["response"].data.errors["Password"]){
       this.setState({
         isShowMask: !this.state.isShowMask,
         error:nextProps.error["response"].data.errors["Password"]
